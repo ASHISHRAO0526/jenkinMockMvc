@@ -17,6 +17,13 @@ PATH = "${M2_HOME}\\bin;${env.PATH};C:\\Windows\\System32;"
             bat 'mvn clean package'
                 }
         }
+                stage('sonar analysis') {
+            steps {
+                withSonarQubeEnv('zensarCodeAnalysis'){
+            bat 'mvn sonar:sonar'
+                }
+                }
+        }
         stage('JaCoCo Report') {
             steps {
             jacoco()
