@@ -24,6 +24,17 @@ PATH = "${M2_HOME}\\bin;${env.PATH};C:\\Windows\\System32;"
                 }
                 }
         }
+        
+             stage('Build Docker Image') {
+            steps {
+ 
+                }
+        }
+        
+                stage('Push Docker Image to Docker Hub') {
+            steps {
+                }
+        }
         stage('JaCoCo Report') {
             steps {
             jacoco()
